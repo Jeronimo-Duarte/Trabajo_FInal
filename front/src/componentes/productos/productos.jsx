@@ -34,7 +34,7 @@ function Productos() {
         <div className="product-container">
           {productos.map((producto) => (
             <div className="product" key={producto._id}>
-              <img src={producto.imagen} alt={producto.nombre} />
+              <img src={`http://localhost:5001/uploads/${producto.imagen}`} alt={producto.nombre} />
               <div className="product-info">
                 <h3>{producto.nombre}</h3>
                 <p>Precio: ${producto.precio}</p>
