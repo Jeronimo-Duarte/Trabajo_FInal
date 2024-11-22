@@ -7,9 +7,14 @@ import Footer from './componentes/Footer/Footer.jsx'
 import ContactForm from './componentes/Contacto/Contacto.jsx'
 import Carrito from './componentes/carrito/Carrito.jsx'
 import { CarritoPro } from './componentes/carrito/CarritoContext.jsx';
+import { AuthProvider } from './componentes/api/AuthContext.jsx'
+import Register from './componentes/api/Register.jsx'
+import Login from './componentes/api/Login.jsx'
 
 function app(){
   return(
+    <AuthProvider>
+
     <CarritoPro>
   <Router>
     <div className='contenedor'>
@@ -21,12 +26,16 @@ function app(){
           <Route path='/productos' element={<Productos />} />
           <Route path='/contacto' element={<ContactForm />} />
           <Route path='/carrito' element={<Carrito />} />
+          <Route  path='/register'element={<Register/>} />
+          <Route  path='/login'element={<Login/>} />  
         </Routes>
       </main>
       <Footer />
     </div>
   </Router>
 </CarritoPro>
+</AuthProvider>
+
 
   );
 }

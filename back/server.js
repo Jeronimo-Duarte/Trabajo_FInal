@@ -4,17 +4,22 @@ const path = require('path');
 require("dotenv").config()
 const cors = require("cors")
 const productosRouter = require('./routes/productosRoutes.js')
-/* const session = require('express-session')
-const userRouter = require('./routes/userRoutes') */
+const session = require('express-session')
+const userRouter = require('./routes/userRoutes') 
 const  mongoose = require("mongoose")
 
 app.use(cors())
 app.use(express.json())
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized :true,
+    cookie:{secure:false}
+}))
+
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
-
-
 app.use("/api/productos",productosRouter)
-
+app.use("/api/users",userRouter)
 mongoose.connect(process.env.MONGODB_URI)
 .then(()=> console.log("Conectado a la MongoDB"))
 .catch(err => console.error('Error al conectar a MongoDB',err))
