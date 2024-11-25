@@ -30,7 +30,7 @@ function Productos() {
   return (
     <section id="productos" className="product-section">
       <div className="container">
-        <h1 className="animate__animated animate__rubberBand tittle">Nuestros productos</h1>
+        <h1 className="animate__animated animate__rubberBand productosTitulo">Nuestros productos</h1>
         <div className="product-container">
           {productos.map((producto) => (
             <div className="product" key={producto._id}>

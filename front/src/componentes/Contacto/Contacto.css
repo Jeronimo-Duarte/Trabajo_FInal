@@ -72,7 +72,7 @@ textarea {
     height: 100px;
 }
 
-button {
+.botonEnviar {
     background-color: #2980b9;
     color: #fff;
     border: none;
@@ -85,12 +85,12 @@ button {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
+.botonEnviar:hover {
     background-color: #3498db;
     transform: translateY(-2px);
 }
 
-button:active {
+.botonEnviar:active {
     transform: translateY(1px);
 }
 

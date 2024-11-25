@@ -32,11 +32,11 @@ import './Navbar.css';
            <Nav className="mx-auto">
              <Nav.Link as={Link} to="/productos">Productos</Nav.Link>
              <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link>
-             <Nav.Link as={Link} to="/carrito">🛒 ({cantidadTotalProductos})</Nav.Link>
-             <button onClick={handleSesion} className="btn btn-outline-light">
+             <Nav.Link as={Link} to="/carrito">🛒 ({cantidadTotalProductos})</Nav.Link>      
+          </Nav>
+          <button onClick={handleSesion} className="btn btn-outline-light botonLogin">
               {isAuthenticated ? 'Cerrar Sesión' : 'Iniciar Sesión'}
             </button>
-          </Nav>
          </Navbar.Collapse>
        </Container>
      </Navbar>

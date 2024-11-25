@@ -16,7 +16,7 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='FormLogin' onSubmit={handleSubmit}>
       <h2>Registro</h2>
       <input
         type="text"
@@ -24,6 +24,7 @@ const Register = () => {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         required
+        className='inputLogin'
       />
       <input
         type="password"
@@ -31,8 +32,9 @@ const Register = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
+        className='inputLogin'
       />
-      <button type="submit">Registrar</button>
+      <button className='botonLogin' type="submit">Registrar</button>
     </form>
   );
 };

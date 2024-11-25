@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import api from './api';    
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from './AuthContext';
+import "./login.css"
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -20,7 +21,7 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='FormLogin'>
       <h2>Iniciar Sesion</h2>
       <input
         type="text"
@@ -28,6 +29,7 @@ const Login = () => {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         required
+        className='inputLogin'
       />
       <input
         type="password"
@@ -35,8 +37,9 @@ const Login = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
+        className='inputLogin'
       />
-      <button type="submit">Iniciar Sesion</button>
+      <button class="botonLogin" type="submit">Iniciar Sesion</button>
       <Link to="/register" >Registrate si todavia no lo hiciste</Link>
     </form>
   );

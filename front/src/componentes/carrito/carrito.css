@@ -1,42 +1,61 @@
- h1{
-    margin-bottom: 20px;
-    font-size: 30px;
- }
+h1{
+  margin-bottom: 20px;
+  font-size: 30px;
+}
 
 
- .carrito-container {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 50vh; 
-    padding: 20px;
-    text-align: center;
-    background-color: #07b9f4; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+.carrito-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh; 
+  padding: 20px;
+  text-align: center;
+  background-color: #07b9f4; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+  .carrito-container p{
+    font-size: 1.5rem;
   }
   
-  .carrito-container ul {
-    list-style-type: none;
+  
+.carrito-container ul {
+  list-style-type: none;
     padding: 0;
   }
   
-  .carrito-container li {
+  .productoCarrito {
     display: grid;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
     font-size: 15px;
+    width:10rem ;
   }
   
-  .carrito-container button {
-    margin-left: 10px;
-    background-color: red;
+  .productoCarrito img {
+    background-color:#0099cc;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+  .botonEliminar {
+    margin-top: 20px;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
   }
   
-  .btn.limpiar {
+  
+  .btn-limpiar {
     margin-top: 20px;
     background-color: #7e2af5;
     color: #fff;
@@ -47,14 +66,9 @@
     transition: background-color 0.3s;
   }
   
-  .btn.limpiar:hover {
+  .btn-limpiar:hover {
     background-color: #581aeb;
   }
-
-  .carrito-container p{
-    font-size: 15px;
-  }
-  
 
 
  

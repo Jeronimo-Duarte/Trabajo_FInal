@@ -29,8 +29,8 @@ function ContactForm() {
 
   return ( 
     <form onSubmit={handleSubmit} id="contact-form">
-      <div>
-        <label htmlFor="name">Nombre:</label>
+      <div className="contactoNombre">
+        <label className="labelNombre" htmlFor="name">Nombre:</label>
         <input
           type="text"
           id="name"
@@ -38,10 +38,11 @@ function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
+          className="inputNombre"
           />
       </div>
-      <div>
-        <label htmlFor="email">Email:</label>
+      <div className="contactoEmail">
+        <label className="labelEmail" htmlFor="email">Email:</label>
         <input
           type="email"
           id="email"
@@ -49,19 +50,21 @@ function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
+          className="inputEmail"
           />
       </div>
-      <div>
-        <label htmlFor="message">Mensaje:</label>
+      <div className="contactoMensaje">
+        <label className="labelMensaje" htmlFor="message">Mensaje:</label>
         <textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
           required
+          className="inputMensaje"
           />
       </div>
-      <button type="submit">Enviar</button>
+      <button className="botonEnviar" type="submit">Enviar</button>
     </form>
   );
 }

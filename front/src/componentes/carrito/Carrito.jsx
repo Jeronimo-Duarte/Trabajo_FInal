@@ -13,17 +13,20 @@ function Carrito() {
       ) : (
         <>
           <ul>
-            {carrito.map((producto, index) => (
-              <li key={index}>
-                {producto.nombre} - ${producto.precio.toFixed(2)}
-                <button onClick={() => eliminarDelCarrito(producto.id)}>Eliminar 🗑</button>
+            {carrito.map((producto) => (
+              <li key={producto._id} class="productoCarrito">
+                <img src={`http://localhost:5001/uploads/${producto.imagen}`} alt="" />
+                <span>{producto.nombre}</span> - ${producto.precio.toFixed(2)} x {producto.cantidad}
+                <button className='botonEliminar' onClick={() => eliminarDelCarrito(producto._id)}>Eliminar 🗑</button>
               </li>
             ))}
           </ul>
-          <div>
-            <p>Total de productos: {carrito.length}</p>
+          <div className='CarritoTotal'>
+            <p>Total de productos: {carrito.reduce((acc, item) => acc + item.cantidad, 0)}</p>
             <p>Precio Total: ${precioTotal.toFixed(2)}</p>
-            <button className="btn limpiar" onClick={limpiarCarrito}>Limpiar carrito</button>
+            <button className="btn-limpiar" onClick={limpiarCarrito}>
+              Limpiar carrito
+            </button>
           </div>
         </>
       )}
