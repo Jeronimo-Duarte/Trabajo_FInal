@@ -7,6 +7,7 @@ const productosRouter = require('./routes/productosRoutes.js')
 const session = require('express-session')
 const userRouter = require('./routes/userRoutes') 
 const  mongoose = require("mongoose")
+const emailRouter = require('./routes/emailRoutes.js')
 
 app.use(cors())
 app.use(express.json())
@@ -16,10 +17,13 @@ app.use(session({
     saveUninitialized :true,
     cookie:{secure:false}
 }))
-
+app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 app.use("/api/productos",productosRouter)
 app.use("/api/users",userRouter)
+app.use("/",emailRouter)
+
+
 mongoose.connect(process.env.MONGODB_URI)
 .then(()=> console.log("Conectado a la MongoDB"))
 .catch(err => console.error('Error al conectar a MongoDB',err))

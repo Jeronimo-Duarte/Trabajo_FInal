@@ -14,7 +14,7 @@ function Carrito() {
         <>
           <ul>
             {carrito.map((producto) => (
-              <li key={producto._id} class="productoCarrito">
+              <li key={producto._id} className="productoCarrito">
                 <img src={`http://localhost:5001/uploads/${producto.imagen}`} alt="" />
                 <span>{producto.nombre}</span> - ${producto.precio.toFixed(2)} x {producto.cantidad}
                 <button className='botonEliminar' onClick={() => eliminarDelCarrito(producto._id)}>Eliminar 🗑</button>

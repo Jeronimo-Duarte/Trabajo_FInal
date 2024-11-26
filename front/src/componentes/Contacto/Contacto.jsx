@@ -1,6 +1,6 @@
 import "./Contacto.css"
 import React, { useState } from 'react';
-
+import axios from "axios";
 function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -16,15 +16,22 @@ function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Datos del formulario:', formData);
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
-    alert("Email enviado")
+    try {
+      const response = await axios.post("http://localhost:5001/send-email", formData);
+      alert("Correo enviado con éxito.");
+      console.log(response.data);
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error al enviar el correo:", error);
+      alert("Hubo un error al enviar el correo.");
+    }
   };
 
   return ( 
