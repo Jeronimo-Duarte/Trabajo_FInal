@@ -8,6 +8,7 @@
 
 .container{
   margin-top: 5rem;
+  text-align:  center;
 }
 .product-container {
   display: grid;

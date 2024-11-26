@@ -8,6 +8,8 @@ function ContactForm() {
     message: '',
   });
 
+  const [successMessage, setSuccessMessage] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -20,14 +22,16 @@ function ContactForm() {
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:5001/send-email", formData);
-      alert("Correo enviado con éxito.");
       console.log(response.data);
-
+      setSuccessMessage('¡Email enviado exitosamente!');
       setFormData({
         name: "",
         email: "",
         message: "",
-      });
+      })
+      
+      
+      ;
     } catch (error) {
       console.error("Error al enviar el correo:", error);
       alert("Hubo un error al enviar el correo.");
@@ -72,6 +76,7 @@ function ContactForm() {
           />
       </div>
       <button className="botonEnviar" type="submit">Enviar</button>
+      {successMessage && <p className="success">{successMessage}</p>}
     </form>
   );
 }
