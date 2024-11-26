@@ -2,17 +2,25 @@ import './productos.css';
 import React, { useContext, useState, useEffect } from 'react';
 import { CarritoContext } from '../carrito/CarritoContext.jsx';
 import axios from 'axios';
+import { useAuth } from '../api/AuthContext.jsx';
 
 function Productos() {
   const [productos, setProductos] = useState([]);
   const [detallesVisible, setDetallesVisible] = useState(null);
   const { agregarAlCarrito } = useContext(CarritoContext);
+  const { isAuthenticated } = useAuth(); // Obtener estado de autenticación
 
   const handleClicEnBotonDetalles = (id) => {
     setDetallesVisible(detallesVisible === id ? null : id);
   };
 
+
   const handleAgregarAlCarrito = (producto) => {  
+    // Validar inicio de sesión antes de agregar
+    if (!isAuthenticated) {
+      alert('Debes iniciar sesión para agregar productos al carrito');
+      return;
+    }
     agregarAlCarrito(producto);
   };
   useEffect(() => {

@@ -75,6 +75,7 @@ h1 {
     position: relative;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 3px 3px 15px rgba(0,0,0,0.1);
 }
@@ -91,7 +92,7 @@ h1::after {
     box-shadow: 0 4px 15px rgba(52, 148, 230, 0.4);
 }
 
-p {
+.container-1 p  {
     font-family: 'Inter', sans-serif;
     color: white;
     font-size: 1.2rem;
@@ -101,7 +102,7 @@ p {
     letter-spacing: 0.5px;
 }
 
-p::before {
+.container-1 p::before {
     content: '→';
     position: absolute;
     left: -35px;

@@ -1,10 +1,27 @@
 import React, { useContext } from 'react';
 import { CarritoContext } from './CarritoContext';
+import { useAuth } from '../api/AuthContext';
 import './carrito.css';
 
 function Carrito() {
-  const { carrito, eliminarDelCarrito, limpiarCarrito, precioTotal } = useContext(CarritoContext);
+  const { 
+    carrito, 
+    eliminarDelCarrito, 
+    limpiarCarrito, 
+    precioTotal 
+  } = useContext(CarritoContext);
+  const { isAuthenticated } = useAuth();
 
+  // Si no hay sesión, mostrar mensaje
+  if (!isAuthenticated) {
+    return (
+      <div className="carrito-container">
+        <h1>Carrito</h1>
+        <p>Debes iniciar sesión para ver tu carrito</p>
+      </div>
+    );
+  }
+  
   return (
     <div className="carrito-container">
       <h1>Carrito</h1>
