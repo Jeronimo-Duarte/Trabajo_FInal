@@ -34,7 +34,7 @@ Configura las variables de entorno. Crea un archivo .env en el directorio back/ 
 MONGODB_URI=mongodb+srv://usuario:<db_password>@cluster0.19com.mongodb.net/
 
 
-Asegúrate de reemplazar mi-base-de-datos con el nombre de tu base de datos en MongoDB.
+Asegúrate de reemplazar usuario co tu usuario de datbase de mongo atlas y db_password por la contraseña del usuario.
 
 Inicia el servidor del backend.
 
