@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
 import api from './api';
+import { useAuth } from './AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  const { login } = useAuth()
+  const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await api.post('/users/register', { username, password });
-      alert('Usuario registrado con éxito');
+      await api.post('/users/login', { username, password });
+
+      // Actualizar el estado de autenticación
+      login();
+
+      // Redirigir al usuario a la página principal
+      navigate('/argentum');
+      alert('Usuario registrado e iniciado sesión con éxito');
     } catch (error) {
       alert('Error al registrar: ' + error.response.data);
     }
