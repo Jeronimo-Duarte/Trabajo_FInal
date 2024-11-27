@@ -21,7 +21,7 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5001/send-email", formData);
+      const response = await axios.post("https://trabajo-final-ithu.onrender.com/send-email", formData);
       console.log(response.data);
       setSuccessMessage('¡Email enviado exitosamente!');
       setFormData({

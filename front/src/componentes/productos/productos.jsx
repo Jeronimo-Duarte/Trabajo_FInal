@@ -26,7 +26,7 @@ function Productos() {
   useEffect(() => {
     const fetchProductos = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/api/productos');
+        const response = await axios.get('https://trabajo-final-ithu.onrender.com/api/productos');
         setProductos(response.data);
       } catch (error) {
         console.error('Error al obtener los productos:', error);
@@ -42,7 +42,7 @@ function Productos() {
         <div className="product-container">
           {productos.map((producto) => (
             <div className="product" key={producto._id}>
-              <img src={`http://localhost:5001/uploads/${producto.imagen}`} alt={producto.nombre} />
+              <img src={`https://trabajo-final-ithu.onrender.com/uploads/${producto.imagen}`} alt={producto.nombre} />
               <div className="product-info">
                 <h3>{producto.nombre}</h3>
                 <p>Precio: ${producto.precio}</p>
