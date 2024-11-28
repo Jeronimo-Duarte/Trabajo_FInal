@@ -1,8 +1,5 @@
 🏆 Argentum
 ¡Bienvenidos a Argentum! Una experiencia única en el mundo del e-commerce deportivo. Aquí encontrarás una plataforma innovadora y dinámica para explorar y adquirir productos deportivos.
-
-Desde equipamiento profesional hasta accesorios deportivos, Argentum combina tecnología de vanguardia con un diseño intuitivo para garantizar una experiencia inigualable para nuestros usuarios y administradores.
-
 🌟 Características Principales
 🎯 Catálogo Deportivo: Explora los productos deportivos que tiene la pagina.
 📄 Detalles Específicos: Obtén información detallada de cada producto.
